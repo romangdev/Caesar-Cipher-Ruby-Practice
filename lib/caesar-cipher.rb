@@ -1,6 +1,9 @@
 def caesar_cipher(word, number = 0)
     arr = word.split("")
     new_word = []
+    return "Please enter positive number" if number.negative?
+    return "Please enter number under 27" if number > 26
+
     arr.each do |char|
         char_ascii = char.ord
         if char_ascii.between?(65, 90)
@@ -21,6 +24,7 @@ def caesar_cipher(word, number = 0)
     end
     new_word = new_word.join
     p new_word
+    return new_word
 end
 
 # testing to see if it works
